@@ -1,0 +1,19 @@
+@import '~bootstrap/scss/bootstrap.scss';
+@import './scss/abstracts/variables';
+@import './scss/abstracts/typography';
+
+//slick carousel
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
+
+//views
+
+@import './scss/views/home';
+
+//components
+
+@import './scss/components/form';
+@import './scss/components/popular';
+@import './scss/components/category';
+@import './scss/components/product';

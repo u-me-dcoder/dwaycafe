@@ -1,0 +1,19 @@
+body{
+    background-color: $body-bg;
+}
+
+#root{
+    
+    
+    margin: auto;
+    color: white;
+   // padding: 1.5rem 1rem 1.5rem 1rem;
+}
+
+.header{
+    &-home{
+        display: flex;
+        justify-content: space-between;
+        
+    }
+}
