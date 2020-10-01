@@ -4,7 +4,7 @@ const ProductItem = (props) => {
     let { name, price,pid ,avatar} = props
     return (
 
-        <Link to={`product/${pid}`} className="product-card">
+        <Link to={`/product/${pid}`} className="product-card">
             <div className="product-img">
                 <img src={`http://192.168.1.11:5000/static/avatars/${avatar}`} alt={name}/>
             </div>

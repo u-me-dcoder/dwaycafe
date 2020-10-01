@@ -1,22 +1,20 @@
-import React,{useEffect} from 'react'
+import React from 'react'
 import Header from '../components/Header'
 import SearchField from '../components/SearchField'
 import Heading from '../components/Heading'
 import Category from '../components/Category'
 import Products from '../components/Products'
-import {connect} from 'react-redux'
+
 
  function Categories(props) {
     let { computedMatch } = props
     let { params } = computedMatch
     let { id } = params
-     useEffect(()=>{
-       console.log('lifecycle method')
-    },[])
+     
    
     return (
         <div className="pt-3 px-3 pb-4">
-            <Header />
+            <Header inner={true}  />
             <div className="my-4">
                 <SearchField/>
             </div>
@@ -29,4 +27,4 @@ import {connect} from 'react-redux'
 
 
 
-export default connect(null,null)(Categories)
+export default Categories

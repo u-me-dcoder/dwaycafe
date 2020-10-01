@@ -9,7 +9,7 @@ import { getCategory } from '../store/actions/category'
 
 
 function Category(props) {
-    console.log(props)
+    
     let { getCategory, category,id } = props
     let { items, loading } = category
     useEffect(() => {
