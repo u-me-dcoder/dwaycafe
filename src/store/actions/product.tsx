@@ -22,7 +22,7 @@ export const getProductList = ()=>async (dispatch)=>{
 
 
 export const getCategoryProduct = (id)=>async (dispatch)=>{
-  console.log('test')
+ 
   try {
     axios.get(`http://192.168.1.11:5000/api/cafe/${id}`).then(res=>{
       dispatch({

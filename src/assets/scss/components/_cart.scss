@@ -1,0 +1,42 @@
+.cart{
+    padding-bottom: 4.5rem;
+    &-container{
+        padding: 1.5rem .75rem;
+    }
+    &-header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+    }
+    &-footer{
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: .5rem 0 1rem 1rem;
+        &_title{
+            @include rfs(16);
+            font-weight: 600;
+            font-style: bold;
+            @include plain-hover-focus{
+                color: $yellow;
+                text-decoration: none;
+            }
+        }
+    }
+    &-icon{
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background-color: rgba($yellow,.36);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        
+
+        
+    }
+}

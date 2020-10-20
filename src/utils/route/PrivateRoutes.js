@@ -5,7 +5,7 @@ import ErrorBoundary from "../ErrorBoundary";
 
 const RenderRoute = props => {
 
-  let { component: Component, children, location,admin} = props;
+  let { component: Component, children, location,admin,layout:Layout} = props;
   
   //let token = localStorage.getItem('token') ? JSON.parse(localStorage.getItem('token')) : ''
   // let decriptedToken = token && token.access_token ? getDecriptedToken(token.access_token) : '' 
@@ -22,7 +22,10 @@ const RenderRoute = props => {
       render={reactRouterProps => {
         return (
           <ErrorBoundary>
-            <Component {...reactRouterProps} {...props} routes={children} />
+            {Layout ? <Layout>
+              <Component {...reactRouterProps} {...props} routes={children} />
+            </Layout>:<Component {...reactRouterProps} {...props} routes={children} />}
+           
           </ErrorBoundary>
         );
       }}

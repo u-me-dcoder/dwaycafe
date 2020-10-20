@@ -1,0 +1,20 @@
+.align{
+    display: flex;
+
+    &-vertical{
+        @extend .d-flex;
+        align-items: center;
+    }
+}
+
+.list{
+    @include list-unstyled;
+}
+
+.back{
+    color: white;
+    @include hover-focus-active{
+        color: white;
+        text-decoration: none;
+    }
+}

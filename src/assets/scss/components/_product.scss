@@ -16,11 +16,12 @@
         }
         @include hover{
             
-                transform: scale(.9);
+                transform: scale(.95);
             
         }
         .textbox{
             margin-left: 1rem;
+            flex-grow: 1;
         }
     }
     &-img{
@@ -37,6 +38,33 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
+        }
+    }
+    &-cart{
+        align-self: center;
+        svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            
+            path{
+               
+            
+                stroke: $orange;
+            }
+        }
+        .product-selector{
+            .btn-circle{
+                width: 2rem;
+                height: 2rem;
+                padding: .5rem;
+                svg{
+                    width:2rem;
+                    height: 2rem;
+                }
+            }
+            .quantity{
+                margin: 0 1.5rem;
+            }
         }
     }
     
@@ -99,5 +127,6 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 4rem;
+    
     }
 }

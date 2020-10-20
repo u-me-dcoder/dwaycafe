@@ -24,15 +24,17 @@ export default function (state= initialState, action) {
    
     case ADD_TO_CART:
         {
-          let newItem = state.products.map(item=>{
-            if(item._id===payload._id){
-              let cartItem = {...item,quantity:payload.quantity}
-              return cartItem
-            }
-            return {...item,...payload}
-          })
-          console.log(newItem)
-          return {...state,products:[...state.products,payload],loading:false}
+         
+           state.products.map(item=> item._id===payload._id ?  item.quantity = payload.quantity : true)
+    
+          return{
+            ...state,
+            products:state.products.filter(item=>item._id===payload._id).length > 0 ? state.products : [...state.products,payload],
+            loading:false
+          }
+          
+         
+          
         }
    
     default:

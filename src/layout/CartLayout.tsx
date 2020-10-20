@@ -1,9 +1,12 @@
-import React from 'react'
+import React,{Fragment} from 'react'
 import {FiShoppingCart} from 'react-icons/fi'
 import {Link} from 'react-router-dom'
-export default function PublicLayout(props) {
+import {connect} from 'react-redux'
+ function CartLayout(props) {
+     let {cart} = props
+     if(cart.products.length ===0) return <Fragment>{props.children}</Fragment>
     return (
-        <div className="public">   
+        <div className="cart">   
             {props.children}
 
             <div className="cart-footer">
@@ -18,3 +21,9 @@ export default function PublicLayout(props) {
         </div>
     )
 }
+
+const mapStateToProps = state =>({
+    cart:state.cart
+})
+
+export default connect(mapStateToProps,null)(CartLayout)

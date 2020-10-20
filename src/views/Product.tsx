@@ -9,10 +9,11 @@ import { connect } from 'react-redux'
 
 import {GrAdd,GrSubtract} from 'react-icons/gr'
 function Product(props) {
+    console.log(props)
 
     let initialQuantity = 1
 
-    let { computedMatch, getProductDetail, product,addToCart,cart} = props
+    let { computedMatch, getProductDetail, product,addToCart,cart,history} = props
     let { params } = computedMatch
     let { id } = params
     let { item } = product
@@ -49,6 +50,7 @@ function Product(props) {
         e.preventDefault()
         let cartItem = {...item,quantity}
         addToCart(cartItem)
+        history.goBack()
 
     }
 

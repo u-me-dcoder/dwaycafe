@@ -1,6 +1,7 @@
 @import '~bootstrap/scss/bootstrap.scss';
 @import './scss/abstracts/variables';
 @import './scss/abstracts/typography';
+@import './scss/abstracts/utilities';
 
 //slick carousel
 @import "~slick-carousel/slick/slick.css"; 
@@ -17,3 +18,4 @@
 @import './scss/components/popular';
 @import './scss/components/category';
 @import './scss/components/product';
+@import './scss/components/cart';
