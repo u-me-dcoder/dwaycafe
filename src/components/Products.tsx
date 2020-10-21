@@ -30,7 +30,7 @@ function Products(props) {
     if( items!==null && items.length > 0){
         const products = items.map((item) => {
             if(cart.products.length > 0){
-                console.log(cart.products.filter(product =>product._id===item._id))
+                
                 if(cart.products.filter(product =>product._id===item._id).length > 0){
                     return <ProductItem key={item._id} name={item.name} price={item.price} pid={item._id} avatar={item.avatar} cart={true} />
                 }

@@ -57,6 +57,7 @@ const routes = [
     exact: true,
     path: "/cart",
     component: Cart,
+    layout: CartLayout,
     
   },
   {

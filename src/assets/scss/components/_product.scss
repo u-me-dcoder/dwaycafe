@@ -67,6 +67,10 @@
             }
         }
     }
+    &-checkbox{
+        align-self: center;
+        margin-right: 1rem;
+    }
     
     &-itemname{
         @include rfs(14);

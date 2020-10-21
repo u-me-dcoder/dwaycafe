@@ -25,7 +25,7 @@ export const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
 
 export const UPDATE_CART_ITEM = 'UPDATE_CART_ITEM'
 
-
+export const GET_CART_LIST = 'GET_CART_LIST'
 
 export const ADD_TO_CART = 'ADD_TO_CART'
 export type ADD_TO_CART = typeof ADD_TO_CART

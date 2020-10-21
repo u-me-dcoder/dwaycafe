@@ -1,17 +1,13 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect} from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import { BiArrowBack } from 'react-icons/bi'
 import { FaRegBell } from 'react-icons/fa'
 import { connect } from 'react-redux'
 import { GrSubtract, GrAdd } from 'react-icons/gr'
 import { addToCart, getCartList } from '../store/actions/cart'
-import {BiTrash} from 'react-icons/bi'
-import classNames from  'classnames'
-import _ from 'lodash'
-function Cart(props) {
+function Checkout(props) {
     let { cart,addToCart,getCartList } = props
-    let [selection,setSelection] = useState([])
-    let [action,setAction] = useState(null)
+
     let {loading,products} = cart
 
     useEffect(()=>{
@@ -43,41 +39,12 @@ function Cart(props) {
 
     }
 
-    const handleChange = id =>{
-        
-        if(selection.includes(id)){
-            let arr =selection.filter(item=>item!==id)
-            setSelection(arr)
-        }
-        else{
-            setSelection([...selection,id])
-        }
-        
-    }
-
-    const setActionType = (type) =>{
-        if(action===type) {
-            setAction(null)
-        }
-        else{
-
-            setAction(type)
-        }
-    }
-
     if(!loading){
         if (cart.products.length === 0) return <Redirect to="/" />
         let list = products.map(item => {
             let { _id, avatar, name, price, quantity } = item
             return (
-                <li  key={_id}>
-                    <div className="product-card">
-
-                        <div className="product-checkbox">
-                            <input type="checkbox" id={_id} onChange={(e)=>handleChange(e.target.id)}/>
-                        </div>
-
-
+                <li className="product-card" key={_id}>
                     <div className="product-img">
                         <img src={`http://192.168.1.11:5000/static/avatars/${avatar}`} alt={name} />
     
@@ -89,23 +56,9 @@ function Cart(props) {
     
     
                     <div className="product-cart">
-                        <div className="product-selector">
-                            <button className="btn btn-circle"  onClick={e=>decrementProduct(item)}>
-                                <GrSubtract />
-                            </button>
-    
-                            <div className="quantity">
-                                {quantity}
-                            </div>
-    
-                            <button className="btn btn-circle" onClick={e=>incrementProduct(item)}>
-                                <GrAdd />
-                            </button>
-    
-                        </div>
+                       
                     </div>
-                    </div>
-                
+    
                 </li>
             )
         })
@@ -116,25 +69,15 @@ function Cart(props) {
                         <BiArrowBack />
                     </Link>
     
-                    <div className="cart-action">
-                        <div className={classNames('item delete',{active:action==='DEL'})} onClick={()=>setActionType('DEL')}>
-
-                        <BiTrash/>
-                        </div>
-
-                        <div className="item">
-
+                    <div>
                         <FaRegBell />
-                        </div>
                     </div>
     
     
                 </div>
-                <ul className="list cart-list">
+                <ul className="list">
                     {list}
                 </ul>
-
-                <button onClick={()=>console.log(selection)}>test</button>
             </div>
         )
     }
@@ -156,4 +99,4 @@ const mapStateToProps = state => ({
     cart: state.cart
 })
 
-export default connect(mapStateToProps, {addToCart,getCartList})(Cart)
+export default connect(mapStateToProps, {addToCart,getCartList})(Checkout)

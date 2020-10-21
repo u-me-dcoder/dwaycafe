@@ -2,6 +2,12 @@
     padding-bottom: 4.5rem;
     &-container{
         padding: 1.5rem .75rem;
+
+        .product-card{
+            @include hover{
+                transform: none;
+            }
+        }
     }
     &-header{
         display: flex;
@@ -38,5 +44,29 @@
         
 
         
+    }
+    &-action{
+        display: flex;
+        .item{
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: $dark-100;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            &:not(:last-child){
+                margin-right: 1rem;
+            }
+            &.delete{
+                @include hover{
+                    cursor: pointer;
+                    background-color: $red;
+                }
+                &.active{
+                    background-color: $red;
+                }
+            }
+        }
     }
 }

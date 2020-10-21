@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 
 import {GrAdd,GrSubtract} from 'react-icons/gr'
 function Product(props) {
-    console.log(props)
+  
 
     let initialQuantity = 1
 
@@ -65,7 +65,7 @@ function Product(props) {
         return (
             <Fragment>
                 <div className="product-header">
-                    <Link to="/" className="icon">
+                    <Link to="/" className="icon back">
                         <BiArrowBack />
                     </Link>
                     <div className="image">

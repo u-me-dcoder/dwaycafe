@@ -1,4 +1,4 @@
-import { ADD_TO_CART } from "../types";
+import { ADD_TO_CART, GET_CART_LIST } from "../types";
 
 
 
@@ -36,6 +36,9 @@ export default function (state= initialState, action) {
          
           
         }
+
+    case GET_CART_LIST:
+      return {...state,loading:false}
    
     default:
       return state;
