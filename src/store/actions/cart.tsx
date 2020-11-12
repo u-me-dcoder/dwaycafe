@@ -1,7 +1,7 @@
 //https://redux.js.org/recipes/usage-with-typescript
 //https://medium.com/@peatiscoding/typescripts-with-redux-redux-thunk-recipe-fcce4ffca405
 
-import axios from 'axios'
+//import axios from 'axios'
 import {  ADD_TO_CART, GET_CART_LIST } from "../types";
 
 

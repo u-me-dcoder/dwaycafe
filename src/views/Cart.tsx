@@ -7,7 +7,7 @@ import { GrSubtract, GrAdd } from 'react-icons/gr'
 import { addToCart, getCartList } from '../store/actions/cart'
 import {BiTrash} from 'react-icons/bi'
 import classNames from  'classnames'
-import _ from 'lodash'
+
 function Cart(props) {
     let { cart,addToCart,getCartList } = props
     let [selection,setSelection] = useState([])
@@ -16,7 +16,7 @@ function Cart(props) {
 
     useEffect(()=>{
         getCartList()
-    },[])
+    },[getCartList])
 
     const incrementProduct = (item) =>{
         
@@ -79,7 +79,7 @@ function Cart(props) {
 
 
                     <div className="product-img">
-                        <img src={`http://192.168.1.11:5000/static/avatars/${avatar}`} alt={name} />
+                        <img src={`${process.env.REACT_APP_API_ENDPOINT}/static/avatars/${avatar}`} alt={name} />
     
                     </div>
                     <div className="textbox">

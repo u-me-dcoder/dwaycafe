@@ -7,7 +7,7 @@ const ProductItem = (props) => {
 
         <Link to={`/product/${pid}`} className="product-card">
             <div className="product-img">
-                <img src={`http://192.168.1.11:5000/static/avatars/${avatar}`} alt={name} />
+                <img src={`${process.env.REACT_APP_API_ENDPOINT}/static/avatars/${avatar}`} alt={name} />
             </div>
             <div className="textbox">
                 <h6 className="product-itemname">{name}</h6>

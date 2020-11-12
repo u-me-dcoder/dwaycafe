@@ -7,8 +7,10 @@ import { GET_CATEGORY_LIST } from "../types";
 
 export const getCategory = ()=>async (dispatch)=>{
   
+  let endpoint = process.env.REACT_APP_CATEGORY_ENDPOINT
+
   try {
-    axios.get('http://192.168.1.11:5000/api/category').then(res=>{
+    axios.get(`${endpoint}`).then(res=>{
       dispatch({
         type:GET_CATEGORY_LIST,
         payload:res.data

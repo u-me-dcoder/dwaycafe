@@ -69,7 +69,7 @@ function Product(props) {
                         <BiArrowBack />
                     </Link>
                     <div className="image">
-                        <img src={`http://192.168.1.11:5000/static/avatars/${avatar}`} alt={name}/>
+                        <img src={`${process.env.REACT_APP_API_ENDPOINT}/static/avatars/${avatar}`} alt={name}/>
                     </div>
                 </div>
                 <div className="product-body">

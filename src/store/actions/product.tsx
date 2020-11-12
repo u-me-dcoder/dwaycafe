@@ -6,9 +6,10 @@ import { GET_PRODUCT_LIST,GET_PRODUCT_DETAIL, GET_CATEGORY_PRODUCT } from "../ty
 
 
 export const getProductList = ()=>async (dispatch)=>{
-  
+ 
   try {
-    axios.get('http://192.168.1.11:5000/api/cafe').then(res=>{
+  
+    axios.get(`${process.env.REACT_APP_CAFE_ENDPOINT}`).then(res=>{
       dispatch({
         type:GET_PRODUCT_LIST,
         payload:res.data
@@ -22,9 +23,9 @@ export const getProductList = ()=>async (dispatch)=>{
 
 
 export const getCategoryProduct = (id)=>async (dispatch)=>{
- 
+
   try {
-    axios.get(`http://192.168.1.11:5000/api/cafe/${id}`).then(res=>{
+    axios.get(`${process.env.REACT_APP_CAFE_ENDPOINT}/${id}`).then(res=>{
       dispatch({
         type:GET_CATEGORY_PRODUCT,
         payload:res.data
@@ -39,7 +40,7 @@ export const getCategoryProduct = (id)=>async (dispatch)=>{
 export const getProductDetail = (id)=>async (dispatch)=>{
   
   try {
-    axios.get(`http://192.168.1.11:5000/api/cafe/product/${id}`).then(res=>{
+    axios.get(`${process.env.REACT_APP_CAFE_ENDPOINT}/product/${id}`).then(res=>{
       dispatch({
         type:GET_PRODUCT_DETAIL,
         payload:res.data
