@@ -44,14 +44,16 @@ function Cart(props) {
     }
 
     const handleChange = id =>{
-        
+        let arr = null
         if(selection.includes(id)){
-            let arr =selection.filter(item=>item!==id)
+             arr =selection.filter(item=>item!==id)
             setSelection(arr)
         }
         else{
-            setSelection([...selection,id])
+            arr = [...selection,id]
+            setSelection(arr)
         }
+        console.log(arr)
         
     }
 
@@ -75,6 +77,7 @@ function Cart(props) {
 
                         <div className="product-checkbox">
                             <input type="checkbox" id={_id} onChange={(e)=>handleChange(e.target.id)}/>
+                            <label htmlFor={_id}></label>
                         </div>
 
 

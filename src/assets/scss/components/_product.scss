@@ -70,6 +70,20 @@
     &-checkbox{
         align-self: center;
         margin-right: 1rem;
+        label{
+            width: 1rem;
+            height: 1rem;
+            background-color: white;
+            border-radius: .125rem;
+            margin-bottom: 0;
+        }
+        input[type='checkbox']{
+            display: none;
+            &:checked+label {
+                background-color: $orange;       
+         }
+        }
+        
     }
     
     &-itemname{
