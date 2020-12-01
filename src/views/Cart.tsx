@@ -7,9 +7,11 @@ import { GrSubtract, GrAdd } from 'react-icons/gr'
 import { addToCart, getCartList } from '../store/actions/cart'
 import {BiTrash} from 'react-icons/bi'
 import classNames from  'classnames'
+import {removeFromCart} from '../store/actions/cart'
+
 
 function Cart(props) {
-    let { cart,addToCart,getCartList } = props
+    let { cart,addToCart,getCartList,removeFromCart } = props
     let [selection,setSelection] = useState([])
     let [action,setAction] = useState(null)
     let {loading,products} = cart
@@ -53,18 +55,13 @@ function Cart(props) {
             arr = [...selection,id]
             setSelection(arr)
         }
-        console.log(arr)
+        
         
     }
 
-    const setActionType = (type) =>{
-        if(action===type) {
-            setAction(null)
-        }
-        else{
-
-            setAction(type)
-        }
+    const removeItemFromCart = () =>{
+        setAction('DEL')
+        removeFromCart(selection)
     }
 
     if(!loading){
@@ -120,7 +117,7 @@ function Cart(props) {
                     </Link>
     
                     <div className="cart-action">
-                        <div className={classNames('item delete',{active:action==='DEL'})} onClick={()=>setActionType('DEL')}>
+                        <div className={classNames('item delete',{active:action==='DEL'})} onClick={()=>removeItemFromCart()}>
 
                         <BiTrash/>
                         </div>
@@ -159,4 +156,4 @@ const mapStateToProps = state => ({
     cart: state.cart
 })
 
-export default connect(mapStateToProps, {addToCart,getCartList})(Cart)
+export default connect(mapStateToProps, {addToCart,getCartList,removeFromCart})(Cart)

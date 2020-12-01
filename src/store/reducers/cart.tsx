@@ -1,4 +1,5 @@
-import { ADD_TO_CART, GET_CART_LIST } from "../types";
+import { ADD_TO_CART, GET_CART_LIST, REMOVE_FROM_CART } from "../types";
+import { stat } from "fs";
 
 
 
@@ -39,6 +40,16 @@ export default function (state= initialState, action) {
 
     case GET_CART_LIST:
       return {...state,loading:false}
+    
+    case REMOVE_FROM_CART:
+   
+      
+      return {
+        ...state,
+        products:state.products.filter(item=>!payload.includes(item._id)),
+        loading:false
+      }
+      
    
     default:
       return state;
