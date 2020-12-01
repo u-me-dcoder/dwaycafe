@@ -9,6 +9,7 @@ const Product = asyncComponent(() => import("../../views/Product"));
 const Category = asyncComponent(() => import("../../views/Categories"));
 const Home = asyncComponent(() => import("../../views/Home"));
 const Cart = asyncComponent(() => import("../../views/Cart"));
+const Checkout = asyncComponent(() => import("../../views/Checkout"));
 const Admin = asyncComponent(() => import("../../views/Protected/Admin"));
 
 const routes = [
@@ -58,6 +59,13 @@ const routes = [
     path: "/cart",
     component: Cart,
     layout: CartLayout,
+    
+  },
+  {
+    exact: true,
+    path: "/checkout",
+    component: Checkout,
+    
     
   },
   {

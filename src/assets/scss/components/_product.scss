@@ -147,4 +147,10 @@
         margin-top: 4rem;
     
     }
+    &-quantity{
+        @include rfs(16);
+        color: $orange;
+        align-self: center;
+        font-weight: 700;
+    }
 }
