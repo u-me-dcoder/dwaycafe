@@ -35,6 +35,13 @@ export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 export type REMOVE_FROM_CART = typeof REMOVE_FROM_CART
 
 
+//FILTER
+export const SET_FILTER = 'SET_FILTER'
+export const SET_TEXT_FILTER = 'SET_TEXT_FILTER'
+export const RESET_FILTER = 'RESET_FILTER'
+
+
+
 
 
 

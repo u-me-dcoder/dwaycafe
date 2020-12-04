@@ -3,14 +3,15 @@ import React,{useEffect} from 'react'
 import ProductItem from './ProductItem';
 import { getCategoryProduct } from '../store/actions/product';
 import {connect} from 'react-redux'
+import setFilter from '../utils/helpers'
 
 
 
 
 function Products(props) {
-    let {id,getCategoryProduct,product,cart} = props
-    let {items} = product
-   
+    let {id,getCategoryProduct,items,cart} = props
+ 
+    console.log(items)
 
     
 
@@ -52,7 +53,7 @@ function Products(props) {
 }
 
 const mapStateToProps = state =>({
-    product:state.product,
+    items:setFilter(state.product.items,state.filter),
     cart:state.cart
 })
 
